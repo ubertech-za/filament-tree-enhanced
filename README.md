@@ -875,6 +875,7 @@ If you discover any security related issues, please report them via the [GitHub 
 ## Credits
 
 **Original Work:** [Solution Forest](https://solutionforest.com) - Carly and contributors
+
 **Enhancements:** Uber Technologies cc
 
 ## License
