@@ -1,0 +1,12 @@
+/* @import '../../vendor/filament/filament/resources/css/theme.css'; */
+@import 'tailwindcss' source(none);
+
+/* @import '../../vendor/filament/support/resources/css/base.css' layer(base); */
+/* @import '../../vendor/filament/support/resources/css/utilities.css' layer(utilities); */
+/* @variant dark (&:where(.dark, .dark *)); */
+
+@import './jquery.nestable.css';
+@import './button.css';
+@import './custom-nestable-item.css';
+
+@source '../views/**/*.blade.php';

@@ -1,0 +1,84 @@
+{
+    "name": "ubertech-za/filament-tree-enhanced",
+    "description": "An enhanced tree layout plugin for Filament Admin with policy authorization and dedicated tree resources",
+    "keywords": [
+        "laravel",
+        "filament-tree",
+        "filament",
+        "tree",
+        "hierarchical"
+    ],
+    "homepage": "https://github.com/ubertech-za/filament-tree-enhanced",
+    "support": {
+        "issues": "https://github.com/ubertech-za/filament-tree-enhanced/issues",
+        "source": "https://github.com/ubertech-za/filament-tree-enhanced"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Uber Technologies cc",
+            "role": "Developer"
+        },
+        {
+            "name": "Carly (Solution Forest)",
+            "email": "info@solutionforest.net",
+            "role": "Original Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "filament/filament": "^4.0",
+        "spatie/laravel-package-tools": "^1.15.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^8.0",
+        "orchestra/testbench": "^9.0|^10.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-arch": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0",
+        "pestphp/pest-plugin-livewire": "^3.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "rector/rector": "^2.0",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "UbertechZa\\FilamentTreeEnhanced\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "UbertechZa\\FilamentTreeEnhanced\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "phpstan analyse",
+        "lint": "pint",
+        "refactor": "rector",
+        "test": "pest",
+        "test:lint": "pint --test",
+        "test:refactor": "rector --dry-run"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "UbertechZa\\FilamentTreeEnhanced\\FilamentTreeServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
