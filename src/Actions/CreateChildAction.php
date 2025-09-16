@@ -19,16 +19,16 @@ class CreateChildAction extends Action
     {
         parent::setUp();
 
-        $this->label(__('filament-tree-enhanced::actions.create-child.label'));
+        $this->label(__('filament-tree-enhanced::filament-tree-enhanced.actions.create-child.label'));
 
-        $this->modalHeading(fn (): string => __('filament-tree-enhanced::actions.create-child.modal.heading', [
+        $this->modalHeading(fn (): string => __('filament-tree-enhanced::filament-tree-enhanced.actions.create-child.modal.heading', [
             'label' => $this->getModelLabel(),
             'parent' => $this->getRecordTitle(),
         ]));
 
-        $this->modalSubmitActionLabel(__('filament-tree-enhanced::actions.create-child.modal.actions.create.label'));
+        $this->modalSubmitActionLabel(__('filament-tree-enhanced::filament-tree-enhanced.actions.create-child.modal.actions.create.label'));
 
-        $this->successNotificationTitle(__('filament-tree-enhanced::actions.create-child.notifications.created.title'));
+        $this->successNotificationTitle(__('filament-tree-enhanced::filament-tree-enhanced.actions.create-child.notifications.created.title'));
 
         $this->icon('heroicon-m-plus-circle');
 
@@ -64,8 +64,8 @@ class CreateChildAction extends Action
     protected function autoConfigureParentRelationship(array $data): array
     {
         $parentRecord = $this->getRecord();
-        $parentColumn = config('filament-tree.column_name.parent', 'parent_id');
-        $orderColumn = config('filament-tree.column_name.order', 'order');
+        $parentColumn = config('filament-tree-enhanced.column_name.parent', 'parent_id');
+        $orderColumn = config('filament-tree-enhanced.column_name.order', 'order');
 
         // Set parent ID
         $data[$parentColumn] = $parentRecord->getKey();

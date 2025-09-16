@@ -185,7 +185,7 @@ trait ModelTree
             childrenKeyName: $childrenKeyName
         );
 
-        $result[static::defaultParentKey()] = __('filament-tree-enhanced::filament-tree.root');
+        $result[static::defaultParentKey()] = __('filament-tree-enhanced::filament-tree-enhanced.root');
 
         foreach ($nodes as $node) {
             static::buildSelectArrayItem($result, $node, $primaryKeyName, $titleKeyName, $childrenKeyName, 1, $maxDepth);

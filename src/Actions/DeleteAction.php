@@ -34,7 +34,7 @@ class DeleteAction extends Action
 
         $this->modalSubheading(function (Model $record) {
             if (collect($record->children)->isNotEmpty()) {
-                return __('filament-tree-enhanced::filament-tree.actions.delete.confirmation.with_children');
+                return __('filament-tree-enhanced::filament-tree-enhanced.actions.delete.confirmation.with_children');
 
             } else {
                 return __('filament-actions::modal.confirmation');

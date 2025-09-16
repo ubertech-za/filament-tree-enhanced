@@ -168,10 +168,10 @@
                 x-on:click="toggleSelectAllCheckboxes()"
             >
                 <span x-show="areAllCheckboxesChecked">
-                {{ __('filament-tree-enhanced::filament-tree.components.tree.buttons.deselect_all.label') }}
+                {{ __('filament-tree-enhanced::filament-tree-enhanced.components.tree.buttons.deselect_all.label') }}
                 </span>
                 <span x-show="!areAllCheckboxesChecked">
-                    {{ __('filament-tree-enhanced::filament-tree.components.tree.buttons.select_all.label') }}
+                    {{ __('filament-tree-enhanced::filament-tree-enhanced.components.tree.buttons.select_all.label') }}
                 </span>
             </x-filament::link>
 
@@ -179,7 +179,7 @@
                 size="sm"
                 icon="heroicon-o-plus"
                 color="secondary"
-                label="{{ __('filament-tree-enhanced::filament-tree.components.tree.buttons.expand_all.label') }}"
+                label="{{ __('filament-tree-enhanced::filament-tree-enhanced.components.tree.buttons.expand_all.label') }}"
                 x-on:click="toggleExpandAll(true)"
                 
             />
@@ -188,7 +188,7 @@
                 size="sm"
                 icon="heroicon-o-minus"
                 color="secondary"
-                label="{{ __('filament-tree-enhanced::filament-tree.components.tree.buttons.collapse_all.label') }}"
+                label="{{ __('filament-tree-enhanced::filament-tree-enhanced.components.tree.buttons.collapse_all.label') }}"
                 x-on:click="toggleExpandAll(false)"
             />
         </div>

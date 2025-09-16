@@ -8,12 +8,12 @@ class Utils
 {
     public static function orderColumnName(): string
     {
-        return config('filament-tree.column_name.order', 'order');
+        return config('filament-tree-enhanced.column_name.order', 'order');
     }
 
     public static function parentColumnName(): string
     {
-        return config('filament-tree.column_name.parent', 'parent_id');
+        return config('filament-tree-enhanced.column_name.parent', 'parent_id');
     }
 
     /**
@@ -21,22 +21,22 @@ class Utils
      */
     public static function depthColumnName(): string
     {
-        return config('filament-tree.column_name.depth', 'depth');
+        return config('filament-tree-enhanced.column_name.depth', 'depth');
     }
 
     public static function titleColumnName(): string
     {
-        return config('filament-tree.column_name.title', 'title');
+        return config('filament-tree-enhanced.column_name.title', 'title');
     }
 
     public static function defaultParentId(): ?int
     {
-        return config('filament-tree.default_parent_id', -1);
+        return config('filament-tree-enhanced.default_parent_id', -1);
     }
 
     public static function defaultChildrenKeyName(): string
     {
-        return strval(config('filament-tree.default_children_key', 'children'));
+        return strval(config('filament-tree-enhanced.default_children_key', 'children'));
     }
 
     /**

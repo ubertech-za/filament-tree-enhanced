@@ -19,15 +19,15 @@ class CreateAction extends Action
     {
         parent::setUp();
 
-        $this->label(__('filament-tree-enhanced::actions.create.label'));
+        $this->label(__('filament-tree-enhanced::filament-tree-enhanced.actions.create.label'));
 
-        $this->modalHeading(fn (): string => __('filament-tree-enhanced::actions.create.modal.heading', [
+        $this->modalHeading(fn (): string => __('filament-tree-enhanced::filament-tree-enhanced.actions.create.modal.heading', [
             'label' => $this->getModelLabel(),
         ]));
 
-        $this->modalSubmitActionLabel(__('filament-tree-enhanced::actions.create.modal.actions.create.label'));
+        $this->modalSubmitActionLabel(__('filament-tree-enhanced::filament-tree-enhanced.actions.create.modal.actions.create.label'));
 
-        $this->successNotificationTitle(__('filament-tree-enhanced::actions.create.notifications.created.title'));
+        $this->successNotificationTitle(__('filament-tree-enhanced::filament-tree-enhanced.actions.create.notifications.created.title'));
 
         $this->icon('heroicon-m-plus');
 
@@ -62,12 +62,12 @@ class CreateAction extends Action
      */
     protected function autoConfigureRootLevel(array $data): array
     {
-        $parentColumn = config('filament-tree.column_name.parent', 'parent_id');
-        $orderColumn = config('filament-tree.column_name.order', 'order');
+        $parentColumn = config('filament-tree-enhanced.column_name.parent', 'parent_id');
+        $orderColumn = config('filament-tree-enhanced.column_name.order', 'order');
 
         // Set as root level if not provided
         if (! isset($data[$parentColumn])) {
-            $data[$parentColumn] = config('filament-tree.default_parent_id', -1);
+            $data[$parentColumn] = config('filament-tree-enhanced.default_parent_id', -1);
         }
 
         // Set order if not provided
@@ -103,7 +103,7 @@ class CreateAction extends Action
     public function parent($parentId): static
     {
         $this->mutateFormDataUsing(function (array $data) use ($parentId) {
-            $parentColumn = config('filament-tree.column_name.parent', 'parent_id');
+            $parentColumn = config('filament-tree-enhanced.column_name.parent', 'parent_id');
             $data[$parentColumn] = $parentId;
 
             return $data;
