@@ -19,10 +19,10 @@
         <menu class="nestable-menu" id="nestable-menu">
             <div class="btn-group">
                 <x-filament::button color="gray" tag="button" data-action="expand-all" x-on:click="expandAll()" wire:loading.attr="disabled" wire:loading.class="cursor-wait opacity-70">
-                    {{ __('filament-tree-enhanced::filament-tree.button.expand_all') }}
+                    {{ __('filament-tree-enhanced::filament-tree-enhanced.button.expand_all') }}
                 </x-filament::button>
                 <x-filament::button color="gray" tag="button" data-action="collapse-all" x-on:click="collapseAll()" wire:loading.attr="disabled" wire:loading.class="cursor-wait opacity-70">
-                    {{ __('filament-tree-enhanced::filament-tree.button.collapse_all') }}
+                    {{ __('filament-tree-enhanced::filament-tree-enhanced.button.collapse_all') }}
                 </x-filament::button>
             </div>
             @if($canUpdateOrder)
@@ -30,7 +30,7 @@
                 <x-filament::button tag="button" data-action="save" x-on:click="save()" wire:loading.attr="disabled" wire:loading.class="cursor-wait opacity-70">
                     <x-filament::loading-indicator class="h-4 w-4" wire:loading wire:target="updateTree"/>
                     <span wire:loading.remove wire:target="updateTree">
-                        {{ __('filament-tree-enhanced::filament-tree.button.save') }}
+                        {{ __('filament-tree-enhanced::filament-tree-enhanced.button.save') }}
                     </span>
 
                 </x-filament::button>

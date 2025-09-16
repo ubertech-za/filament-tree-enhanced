@@ -23,7 +23,7 @@ class ViewTreeRecord extends ViewRecord
         $actions = parent::getHeaderActions();
 
         // Filter based on policy if enabled
-        if (config('filament-tree.enable_policy_authorization', false)) {
+        if (config('filament-tree-enhanced.enable_policy_authorization', false)) {
             $actions = array_filter($actions, function ($action) {
                 return $action->isVisible();
             });

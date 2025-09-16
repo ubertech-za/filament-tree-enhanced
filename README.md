@@ -60,7 +60,7 @@ Then, publish the config file using:
 php artisan vendor:publish --tag="filament-tree-enhanced-config"
 ```
 
-You can set your preferred options by adding the following code to your `config/filament-tree.php` file:
+You can set your preferred options by adding the following code to your `config/filament-tree-enhanced.php` file:
 
 ```php
 <?php

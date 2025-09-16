@@ -64,7 +64,7 @@ class Action extends BaseAction implements HasTree
         }
 
         // If policy authorization is disabled, use standard visibility
-        if (! config('filament-tree.enable_policy_authorization', false)) {
+        if (! config('filament-tree-enhanced.enable_policy_authorization', false)) {
             return true;
         }
 
@@ -80,7 +80,7 @@ class Action extends BaseAction implements HasTree
         parent::setUp();
 
         // Only auto-configure if feature is enabled
-        if (! config('filament-tree.enable_policy_authorization', false)) {
+        if (! config('filament-tree-enhanced.enable_policy_authorization', false)) {
             return;
         }
 
@@ -98,7 +98,7 @@ class Action extends BaseAction implements HasTree
         }
 
         $actionName = $this->getName();
-        $policyAbilities = config('filament-tree.policy_abilities', []);
+        $policyAbilities = config('filament-tree-enhanced.policy_abilities', []);
 
         if (isset($policyAbilities[$actionName])) {
             $ability = $policyAbilities[$actionName];

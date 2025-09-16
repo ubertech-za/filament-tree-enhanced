@@ -98,7 +98,7 @@ abstract class TreeResource extends Resource
      */
     public static function getTreeParentColumn(): string
     {
-        return config('filament-tree.column_name.parent', 'parent_id');
+        return config('filament-tree-enhanced.column_name.parent', 'parent_id');
     }
 
     /**
@@ -106,7 +106,7 @@ abstract class TreeResource extends Resource
      */
     public static function getTreeOrderColumn(): string
     {
-        return config('filament-tree.column_name.order', 'order');
+        return config('filament-tree-enhanced.column_name.order', 'order');
     }
 
     /**
@@ -114,7 +114,7 @@ abstract class TreeResource extends Resource
      */
     public static function getTreeTitleColumn(): string
     {
-        return config('filament-tree.column_name.title', 'title');
+        return config('filament-tree-enhanced.column_name.title', 'title');
     }
 
     /**
@@ -122,7 +122,7 @@ abstract class TreeResource extends Resource
      */
     public static function getTreeChildrenKeyName(): string
     {
-        return config('filament-tree.default_children_key_name', 'children');
+        return config('filament-tree-enhanced.default_children_key_name', 'children');
     }
 
     /**
@@ -130,6 +130,6 @@ abstract class TreeResource extends Resource
      */
     public static function getTreeDefaultParentId(): int|string|null
     {
-        return config('filament-tree.default_parent_id', -1);
+        return config('filament-tree-enhanced.default_parent_id', -1);
     }
 }

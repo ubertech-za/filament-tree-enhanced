@@ -105,7 +105,7 @@ class ListTreeRecords extends ListRecords implements HasTree
             $actions = $resource::getTreeHeaderActions();
 
             // Filter based on policy if enabled
-            if (config('filament-tree.enable_policy_authorization', false)) {
+            if (config('filament-tree-enhanced.enable_policy_authorization', false)) {
                 $actions = array_filter($actions, function ($action) {
                     return $action->isVisible();
                 });
@@ -251,7 +251,7 @@ class ListTreeRecords extends ListRecords implements HasTree
             }
 
             // Filter by visibility (includes policy authorization)
-            if (config('filament-tree.enable_policy_authorization', false)) {
+            if (config('filament-tree-enhanced.enable_policy_authorization', false)) {
                 $configuredActions = array_filter($configuredActions, function ($action) {
                     return $action->isVisible();
                 });
@@ -266,7 +266,7 @@ class ListTreeRecords extends ListRecords implements HasTree
      */
     public function canUpdateTreeOrder(): bool
     {
-        $policyAuthEnabled = config('filament-tree.enable_policy_authorization', false);
+        $policyAuthEnabled = config('filament-tree-enhanced.enable_policy_authorization', false);
 
         if (! $policyAuthEnabled) {
             return true; // Allow if policy authorization is disabled
