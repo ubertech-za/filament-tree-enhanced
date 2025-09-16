@@ -20,13 +20,6 @@ Filament Tree is a plugin for Filament Admin that creates a model management pag
 
 This plugin creates model management page with heritage tree structure view for Filament Admin. It could be used to create menu, etc.
 
-Demo site : https://filament-cms-website-demo.solutionforest.net/admin
-
-Demo username : demo@solutionforest.net
-
-Demo password : 12345678
-Auto Reset every hour.
-
 ## Supported Filament versions
 
 | Filament Version | Plugin Version |
@@ -881,26 +874,13 @@ See [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 ## Security Vulnerabilities
 
-If you discover any security related issues, please email info+package@solutionforest.net instead of using the issue tracker.
+If you discover any security related issues, please report them via the [GitHub issue tracker](https://github.com/ubertech-za/filament-tree-enhanced/issues) or create a private security advisory.
 
 ## Credits
 
-- [Carly]
-- [All Contributors](../../contributors)
+**Original Work:** [Solution Forest](https://solutionforest.com) - Carly and contributors
+**Enhancements:** Uber Technologies cc
 
 ## License
 
-Filament Tree is open-sourced software licensed under the [MIT license](LICENSE.md).
-
-<p align="center"><a href="https://solutionforest.com" target="_blank"><img src="https://github.com/solutionforest/.github/blob/main/docs/images/sf.png?raw=true" width="200"></a></p>
-
-## About Solution Forest
-
-[Solution Forest](https://solutionforest.com) Web development agency based in Hong Kong. We help customers to solve their problems. We Love Open Soruces.
-
-We have built a collection of best-in-class products:
-
-- [VantagoAds](https://vantagoads.com): A self manage Ads Server, Simplify Your Advertising Strategy.
-- [GatherPro.events](https://gatherpro.events): A Event Photos management tools, Streamline Your Event Photos.
-- [Website CMS Management](https://filamentphp.com/plugins/solution-forest-cms-website): Website CMS Management - Filament CMS Plugin
-- [Filaletter](https://filaletter.solutionforest.net): Filaletter - Filament Newsletter Plugin
+Enhanced Filament Tree is open-sourced software licensed under the [MIT license](LICENSE.md).
