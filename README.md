@@ -86,8 +86,6 @@ return [
 
 ```
 
-![Using tree widget on page](https://github.com/user-attachments/assets/1f09d707-b6ac-4d68-9009-55dade707c43)
-
 ## Usage
 
 ### Prepare the database and model
@@ -383,8 +381,6 @@ public function getTreeRecordIcon(?\Illuminate\Database\Eloquent\Model $record =
     };
 }
 ```
-
-![Item record on tree](https://github.com/user-attachments/assets/f5d2fcb8-f366-47e9-956d-6b81c8edd2ac)
 
 #### Node collapsed state
 
