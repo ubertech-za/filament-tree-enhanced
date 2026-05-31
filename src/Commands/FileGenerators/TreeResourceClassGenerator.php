@@ -37,17 +37,17 @@ class TreeResourceClassGenerator extends ClassGenerator
             $this->model,
             TreeResource::class,
             'Filament\\Schemas\\Schema',
-            'Filament\\Schemas\\Components\\TextInput',
-            'Filament\\Schemas\\Components\\Textarea',
-            'Filament\\Schemas\\Components\\Select',
-            'Filament\\Schemas\\Components\\Hidden',
-            'SolutionForest\\FilamentTree\\Components\\Tree',
-            'SolutionForest\\FilamentTree\\Actions\\CreateAction',
-            'SolutionForest\\FilamentTree\\Actions\\CreateChildAction',
-            'SolutionForest\\FilamentTree\\Actions\\EditAction',
-            'SolutionForest\\FilamentTree\\Actions\\DeleteAction',
-            ...($this->includeViewPages ? ['SolutionForest\\FilamentTree\\Actions\\ViewAction'] : []),
-            ...($this->includeSoftDeletes ? ['SolutionForest\\FilamentTree\\Actions\\RestoreAction'] : []),
+            'Filament\\Forms\\Components\\TextInput',
+            'Filament\\Forms\\Components\\Textarea',
+            'Filament\\Forms\\Components\\Select',
+            'Filament\\Forms\\Components\\Hidden',
+            'UbertechZa\\FilamentTreeEnhanced\\Components\\Tree',
+            'UbertechZa\\FilamentTreeEnhanced\\Actions\\CreateAction',
+            'UbertechZa\\FilamentTreeEnhanced\\Actions\\CreateChildAction',
+            'UbertechZa\\FilamentTreeEnhanced\\Actions\\EditAction',
+            'UbertechZa\\FilamentTreeEnhanced\\Actions\\DeleteAction',
+            ...($this->includeViewPages ? ['UbertechZa\\FilamentTreeEnhanced\\Actions\\ViewAction'] : []),
+            ...($this->includeSoftDeletes ? ['Filament\\Actions\\RestoreAction'] : []),
         ];
     }
 
@@ -74,10 +74,10 @@ namespace {$this->getNamespace()};
 use {$this->model};
 use UbertechZa\FilamentTreeEnhanced\Resources\TreeResource;
 use Filament\Schemas\Schema;
-use Filament\Schemas\Components\TextInput;
-use Filament\Schemas\Components\Textarea;
-use Filament\Schemas\Components\Select;
-use Filament\Schemas\Components\Hidden;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Hidden;
 use UbertechZa\FilamentTreeEnhanced\Components\Tree;
 use UbertechZa\FilamentTreeEnhanced\Actions\CreateAction;
 use UbertechZa\FilamentTreeEnhanced\Actions\CreateChildAction;
@@ -146,12 +146,12 @@ PHP;
 
     protected function getViewImport(): string
     {
-        return $this->includeViewPages ? "\nuse SolutionForest\\FilamentTree\\Actions\\ViewAction;" : '';
+        return $this->includeViewPages ? "\nuse UbertechZa\\FilamentTreeEnhanced\\Actions\\ViewAction;" : '';
     }
 
     protected function getSoftDeleteImports(): string
     {
-        return $this->includeSoftDeletes ? "\nuse SolutionForest\\FilamentTree\\Actions\\RestoreAction;" : '';
+        return $this->includeSoftDeletes ? "\nuse Filament\\Actions\\RestoreAction;" : '';
     }
 
     protected function getViewAction(): string

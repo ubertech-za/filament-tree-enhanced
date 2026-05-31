@@ -2,6 +2,28 @@
 
 All notable changes to `filament-tree-enhanced` will be documented in this file.
 
+## 5.0.0 - 2026-05-31
+
+### What's New in 5.0.0
+
+Support for **Filament v5**. The package now supports `filament/filament: ^4.0 || ^5.0`.
+
+#### 🚀 Changes
+
+- **Filament v5 support**: bumped the `filament/filament` constraint to `^4.0 || ^5.0`.
+- **Console command compatibility**: the `configure()` methods on the `make:filament-tree-*`
+  commands now declare the `: void` return type required by newer Symfony Console / PHP.
+- **Generated resource imports fixed**: the tree-resource generator now emits form components
+  from `Filament\Forms\Components\*` (TextInput, Textarea, Select, Hidden) instead of the
+  non-existent `Filament\Schemas\Components\*`.
+- **Generator namespace fixes**: the generator's import list and view/soft-delete imports now
+  reference `UbertechZa\FilamentTreeEnhanced\*` (and Filament's built-in
+  `Filament\Actions\RestoreAction`) instead of the stale `SolutionForest\FilamentTree\*`.
+
+#### ⚠️ Upgrade notes
+
+- Requires Filament v4 or v5. No API changes to your tree resources/pages/widgets are needed.
+
 ## 4.0.0 - 2025-XX-XX
 
 ### What's New in 4.0.0
