@@ -1,6 +1,6 @@
 # Enhanced Filament Tree
 
-This is an enhanced version of the Filament Tree plugin, maintained by Uber Technologies cc. We've built upon the excellent work of the original authors at Solution Forest to add policy authorization, dedicated tree resources that replace table views, and enhanced Filament v4 compatibility.
+This is an enhanced version of the Filament Tree plugin, maintained by Uber Technologies cc. We've built upon the excellent work of the original authors at Solution Forest to add policy authorization, dedicated tree resources that replace table views, and enhanced Filament v4 and v5 compatibility.
 
 **Key Enhancements:**
 - Laravel policy authorization with automatic action hiding
@@ -24,6 +24,7 @@ This plugin creates model management page with heritage tree structure view for 
 
 | Filament Version | Plugin Version |
 | ---------------- |----------------|
+| v5               | 5.x.x          |
 | v4               | 4.x.x          |
 
 ## Installation
@@ -42,7 +43,7 @@ php artisan filament:assets
 
 > **Note: Add plugin Blade files to your custom theme `tailwind.config.js` for dark mode.**
 >
-> To set up your own custom theme, you can visit the [official instruction page](https://filamentphp.com/docs/4.x/styling/overview#creating-a-custom-theme) on the Filament website.
+> To set up your own custom theme, you can visit the [official instruction page](https://filamentphp.com/docs/5.x/styling/overview#creating-a-custom-theme) on the Filament website.
 
 Add the plugin's views and css to your `theme.css` file.
 
@@ -641,9 +642,9 @@ php artisan make:filament-tree-resource Location --model=Location
 php artisan make:filament-tree-resource Category --model=Category --generate-form
 ```
 
-#### Generated Structure (Filament v4 Pattern)
+#### Generated Structure (Filament v4 / v5 Pattern)
 
-The command creates a complete resource following Filament v4's folder-based organization:
+The command creates a complete resource following Filament v4 / v5's folder-based organization:
 
 ```
 app/Filament/Resources/Locations/
