@@ -2,9 +2,11 @@
 
 namespace UbertechZa\FilamentTreeEnhanced\Components;
 
+use Filament\Actions\ActionGroup;
 use Filament\Schemas\Schema;
 use Filament\Support\Components\ViewComponent;
 use Illuminate\Database\Eloquent\Model;
+use UbertechZa\FilamentTreeEnhanced\Actions\Action;
 use UbertechZa\FilamentTreeEnhanced\Concern\BelongsToLivewire;
 use UbertechZa\FilamentTreeEnhanced\Contract\HasTree;
 use UbertechZa\FilamentTreeEnhanced\Support\Utils;
@@ -49,7 +51,7 @@ class Tree extends ViewComponent
     public function actions(array $actions): static
     {
         $this->actions = collect($actions)->map(function ($action) {
-            if ($action instanceof \UbertechZa\FilamentTreeEnhanced\Actions\Action) {
+            if ($action instanceof Action) {
                 return $action->tree($this);
             }
 
@@ -84,7 +86,7 @@ class Tree extends ViewComponent
     public function getAction($name)
     {
         foreach ($this->actions as $action) {
-            if ($action instanceof \Filament\Actions\ActionGroup) {
+            if ($action instanceof ActionGroup) {
                 return collect($action->getFlatActions())->get($name);
             }
             if ($action->getName() === $name) {

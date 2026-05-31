@@ -6,6 +6,7 @@ use Closure;
 use Filament\Actions\Action as BaseAction;
 use Filament\Actions\Concerns\CanBeAuthorized;
 use Illuminate\Database\Eloquent\Model;
+use UbertechZa\FilamentTreeEnhanced\Components\Tree;
 use UbertechZa\FilamentTreeEnhanced\Concern\Actions\HasTree;
 use UbertechZa\FilamentTreeEnhanced\Concern\BelongsToTree;
 
@@ -17,7 +18,7 @@ class Action extends BaseAction implements HasTree
     /**
      * Override tree method to configure policy authorization after tree is set
      */
-    public function tree(\UbertechZa\FilamentTreeEnhanced\Components\Tree $tree): static
+    public function tree(Tree $tree): static
     {
         $this->tree = $tree;
 

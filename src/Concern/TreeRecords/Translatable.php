@@ -4,7 +4,6 @@ namespace UbertechZa\FilamentTreeEnhanced\Concern\TreeRecords;
 
 use Filament\Actions\CreateAction;
 use Illuminate\Database\Eloquent\Model;
-use UbertechZa\FilamentTreeEnhanced\Actions;
 use UbertechZa\FilamentTreeEnhanced\Actions\EditAction;
 use UbertechZa\FilamentTreeEnhanced\Actions\ViewAction;
 use UbertechZa\FilamentTreeEnhanced\Concern\HasTranslatableRecords;
@@ -67,7 +66,7 @@ trait Translatable
 
     protected function afterConfiguredEditAction(EditAction $action): EditAction
     {
-        /** @var Actions\EditAction */
+        /** @var EditAction */
         $action = parent::afterConfiguredEditAction($action);
 
         $action->mutateRecordDataUsing(function (array $data, Model $record) {
@@ -96,7 +95,7 @@ trait Translatable
 
     protected function afterConfiguredViewAction(ViewAction $action): ViewAction
     {
-        /** @var Actions\ViewAction */
+        /** @var ViewAction */
         $action = parent::afterConfiguredViewAction($action);
 
         $action->mutateRecordDataUsing(function (array $data, Model $record) {

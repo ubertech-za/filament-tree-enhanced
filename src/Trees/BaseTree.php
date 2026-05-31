@@ -2,6 +2,7 @@
 
 namespace UbertechZa\FilamentTreeEnhanced\Trees;
 
+use UbertechZa\FilamentTreeEnhanced\Actions\Action;
 use UbertechZa\FilamentTreeEnhanced\Components\Tree;
 
 abstract class BaseTree
@@ -40,7 +41,7 @@ abstract class BaseTree
             $model = static::getResource()::getModel();
 
             if ($instance->hasAddChildAction()) {
-                $actions[] = \UbertechZa\FilamentTreeEnhanced\Actions\Action::make('createChild')
+                $actions[] = Action::make('createChild')
                     ->iconButton()
                     ->icon('heroicon-m-plus')
                     ->tooltip('Add Child')
@@ -49,7 +50,7 @@ abstract class BaseTree
             }
 
             if ($instance->hasEditAction()) {
-                $actions[] = \UbertechZa\FilamentTreeEnhanced\Actions\Action::make('edit')
+                $actions[] = Action::make('edit')
                     ->iconButton()
                     ->icon('heroicon-m-pencil-square')
                     ->tooltip('Edit')
@@ -58,7 +59,7 @@ abstract class BaseTree
             }
 
             if ($instance->hasViewAction()) {
-                $actions[] = \UbertechZa\FilamentTreeEnhanced\Actions\Action::make('view')
+                $actions[] = Action::make('view')
                     ->iconButton()
                     ->icon('heroicon-m-eye')
                     ->tooltip('View')
@@ -69,7 +70,7 @@ abstract class BaseTree
 
         // Delete action works in both contexts (resource and non-resource)
         if ($instance->hasDeleteAction()) {
-            $actions[] = \UbertechZa\FilamentTreeEnhanced\Actions\Action::make('delete')
+            $actions[] = Action::make('delete')
                 ->iconButton()
                 ->icon('heroicon-m-trash')
                 ->tooltip('Delete')
@@ -92,7 +93,7 @@ abstract class BaseTree
         // Only show create action in resource context
         if ($instance->hasCreateAction() && static::isResourceContext()) {
             $model = static::getResource()::getModel();
-            $actions[] = \UbertechZa\FilamentTreeEnhanced\Actions\Action::make('create')
+            $actions[] = Action::make('create')
                 ->label('Create '.static::getResource()::getModelLabel())
                 ->url(static::getResource()::getUrl('create'))
                 ->model($model);

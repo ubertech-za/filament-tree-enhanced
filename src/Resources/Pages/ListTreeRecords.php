@@ -7,6 +7,8 @@ use Filament\Support\Contracts\TranslatableContentDriver;
 use Filament\Tables\Table;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
+use UbertechZa\FilamentTreeEnhanced\Actions\Action;
+use UbertechZa\FilamentTreeEnhanced\Actions\ActionGroup;
 use UbertechZa\FilamentTreeEnhanced\Components\Tree;
 use UbertechZa\FilamentTreeEnhanced\Concern\InteractWithTree;
 use UbertechZa\FilamentTreeEnhanced\Contract\HasTree;
@@ -190,13 +192,13 @@ class ListTreeRecords extends ListRecords implements HasTree
             $allActions = array_merge($allActions, $resource::getTreeHeaderActions());
         }
 
-        $actions = \UbertechZa\FilamentTreeEnhanced\Actions\Action::configureUsing(
+        $actions = Action::configureUsing(
             \Closure::fromCallable([$this, 'configureTreeAction']),
             fn (): array => $allActions,
         );
 
         foreach ($actions as $index => $action) {
-            if ($action instanceof \UbertechZa\FilamentTreeEnhanced\Actions\ActionGroup) {
+            if ($action instanceof ActionGroup) {
                 foreach ($action->getActions() as $groupedAction) {
                     $groupedAction->tree($this->getCachedTree());
                 }
@@ -238,14 +240,14 @@ class ListTreeRecords extends ListRecords implements HasTree
             $actions = $resource::getTreeHeaderActions();
 
             // Configure actions with tree context and configure using the same system as tree actions
-            $configuredActions = \UbertechZa\FilamentTreeEnhanced\Actions\Action::configureUsing(
+            $configuredActions = Action::configureUsing(
                 \Closure::fromCallable([$this, 'configureTreeAction']),
                 fn (): array => $actions,
             );
 
             // Set tree context for each action
             foreach ($configuredActions as $action) {
-                if ($action instanceof \UbertechZa\FilamentTreeEnhanced\Actions\Action) {
+                if ($action instanceof Action) {
                     $action->tree($this->getCachedTree());
                 }
             }
