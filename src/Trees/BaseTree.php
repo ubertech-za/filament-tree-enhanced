@@ -14,7 +14,8 @@ abstract class BaseTree
 
     protected bool $hasEditAction = true;
 
-    protected bool $hasViewAction = true;
+    // Off by default: generated resources have no `view` page unless created with --view.
+    protected bool $hasViewAction = false;
 
     protected bool $hasDeleteAction = true;
 
@@ -49,7 +50,7 @@ abstract class BaseTree
                     ->model($model);
             }
 
-            if ($instance->hasEditAction()) {
+            if ($instance->hasEditAction() && static::resourceHasPage('edit')) {
                 $actions[] = Action::make('edit')
                     ->iconButton()
                     ->icon('heroicon-m-pencil-square')
@@ -58,7 +59,7 @@ abstract class BaseTree
                     ->model($model);
             }
 
-            if ($instance->hasViewAction()) {
+            if ($instance->hasViewAction() && static::resourceHasPage('view')) {
                 $actions[] = Action::make('view')
                     ->iconButton()
                     ->icon('heroicon-m-eye')
@@ -107,6 +108,19 @@ abstract class BaseTree
      * Must be implemented by child classes
      */
     abstract public static function getResource(): string;
+
+    /**
+     * Whether the associated resource registers the given page (e.g. 'view', 'edit').
+     * Guards tree-node action URLs against routes that were never generated.
+     */
+    protected static function resourceHasPage(string $page): bool
+    {
+        try {
+            return array_key_exists($page, static::getResource()::getPages());
+        } catch (\Throwable $e) {
+            return false;
+        }
+    }
 
     /**
      * Check if we're in a resource context (vs original tree page/widget context)

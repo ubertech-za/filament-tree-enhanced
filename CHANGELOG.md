@@ -2,6 +2,16 @@
 
 All notable changes to `filament-tree-enhanced` will be documented in this file.
 
+## 5.0.1 - 2026-05-31
+
+### Fixed
+
+- **Tree node actions no longer crash when the resource has no `view`/`edit` page.**
+  `BaseTree` now defaults `$hasViewAction` to `false` (consistent with the tree page trait and
+  with resources generated without `--view`), and guards the view/edit node-action URLs behind
+  a check that the resource actually registers that page. Previously, rendering a populated tree
+  for a resource generated without view pages threw `Route [...view] not defined`.
+
 ## 5.0.0 - 2026-05-31
 
 ### What's New in 5.0.0
